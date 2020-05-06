@@ -6,14 +6,17 @@
         = current_user.name   
       %ul.side-header__area__iconlist
         %li.side-header__area__iconlist__edit
-        = link_to "#",class: "side-header__area__iconlist__edit side-header__area__iconlist__edit--group" do
+        = link_to new_group_path ,class: "side-header__area__iconlist__edit side-header__area__iconlist__edit--group" do
           = icon("far","edit",class: "side-header__area__btn")
         %li.side-header__area__iconlist__edit
         = link_to edit_user_path(current_user) ,class: "side-header__area__iconlist__edit side-header__area__iconlist__edit--acount" do
           = icon("fas","cog",class: "side-header__area__btn")
    
   .groups
-    = link_to "#", class: "group" do
-      %p.group__name techcamp
-      %p.group__message まだメッセージはありません
-
+    - current_user.groups.each do |group|
+      = link_to "#", class: "group" do
+        %p.group__name 
+          = group.name 
+        %p.group__message 
+          まだメッセージはありません
+  
