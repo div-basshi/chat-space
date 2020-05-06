@@ -1,9 +1,8 @@
+@import"config/variable";
+
 * {
   box-sizing: border-box;
 }
-
-$white:white;
-$btn-color:#38aef0;
 
 .wrapper{
   width:100vw;
@@ -23,7 +22,7 @@ $btn-color:#38aef0;
        padding:0 20px;
 
        &__name{
-         color:$white;
+         color: $white;
          font-size:16px;
          height:20px;
          width:200px;
