@@ -12,11 +12,13 @@
         = link_to edit_user_path(current_user) ,class: "side-header__area__iconlist__edit side-header__area__iconlist__edit--acount" do
           = icon("fas","cog",class: "side-header__area__btn")
    
+
   .groups
-    - current_user.groups.each do |group|
+
+    .grouplist
       = link_to "#", class: "group" do
-        %p.group__name 
-          = group.name 
-        %p.group__message 
-          まだメッセージはありません
-  
+        %p.group__name techcamp
+        %p.group__message まだメッセージはありません
+
+
+ 
