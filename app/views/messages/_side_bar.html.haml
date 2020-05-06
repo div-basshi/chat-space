@@ -14,9 +14,14 @@
    
   .groups
     - current_user.groups.each do |group|
-      = link_to "#", class: "group" do
-        %p.group__name 
-          = group.name 
-        %p.group__message 
-          まだメッセージはありません
+      .grouplist
+        = link_to "#", class: "group" do
+          %p.group__name 
+            = group.name 
+          %p.group__message 
+            まだメッセージはありません
   
+  
+
+
+      
