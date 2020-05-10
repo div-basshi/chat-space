@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
 
   def index
+    
   end
 
   def new
@@ -25,7 +26,7 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id])
     if @group.update(group_params)
-      redirect_to root_path, notice: 'グループを更新しました'
+       redirect_to  "/groups/#{@group.id}/messages" , notice: 'グループを更新しました' #一応直ったがいえに返って確認する。
     else
       render :edit
     end
