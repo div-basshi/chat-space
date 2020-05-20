@@ -2,33 +2,35 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="messages__area">
-            <div class="messages__area__name">
+      `<div class="message" data-message-id=${message.id}>
+        <div class="message__area">
+            <div class="message__area__name">
               ${message.user_name}
             </div>
-            <div class="messages__area__time">
+            <div class="message__area__time">
               ${message.created_at}
             </div>
           </div>
-          <div class="messages__text">
-            <p class="messages__text__message">
+          <div class="message__text">
+            <p class="message__text__message">
               ${message.content}
             </p>
-            <img class="messages__text__image" src="${message.image}">
+            <img class="message__text__image" src="${message.image}">
           </div>`
       return html;
     } else {
       let html =
-      `<div class="messages__area">
-          <div class="messages__area__name">
+    `<div class="message" data-message-id=${message.id}>
+      <div class="message__area">
+          <div class="message__area__name">
             ${message.user_name}
           </div>
-          <div class="messages__area__time">
+          <div class="message__area__time">
             ${message.created_at}
           </div>
         </div>
-        <div class="messages__text">
-          <p class="messages__text__message">
+        <div class="message__text">
+          <p class="message__text__message">
             ${message.content}
           </p>
         </div>`
