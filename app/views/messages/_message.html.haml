@@ -1,10 +1,11 @@
-.messages__area
-  %p.messgaes__area__name 
-    = message.user.name
-  %p.messages__area__time   
-    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-.messages__text
-  - if message.content.present?
-    %p.messages__text__message 
-      = message.content
-  = image_tag message.image.url, class: 'messages__text__image' if message.image.present?
+.message{data: {message: {id: message.id}}}
+  .message__area
+    %p.messgae__area__name 
+      = message.user.name
+    %p.message__area__time   
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .message__text
+    - if message.content.present?
+      %p.message__text__message 
+        = message.content
+    = image_tag message.image.url, class: 'message__text__image' if message.image.present?
